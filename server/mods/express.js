@@ -93,25 +93,29 @@ module.exports = {
 
         const token = req.cookies.githubtoken;
         if (token) {
-            const user = await rp({
-                uri: 'https://api.github.com/user',
-                headers: {
-                    'Authorization': 'token '+token,
-                    'User-Agent': 'request-promise'
-                },
-                json: true
-            });
-            a.user = {name: user.name, avatar_url: user.avatar_url}
+            try {
+                const user = await rp({
+                    uri: 'https://api.github.com/user',
+                    headers: {
+                        'Authorization': 'token '+token,
+                        'User-Agent': 'request-promise'
+                    },
+                    json: true
+                });
+                a.user = {name: user.name, avatar_url: user.avatar_url}
 
-            const repos = await rp({
-                uri: 'https://api.github.com/user/repos',
-                headers: {
-                    'Authorization': 'token '+token,
-                    'User-Agent': 'request-promise'
-                },
-                json: true
-            });
-            a.repos = repos.map(item => ({name: item.name}));
+                const repos = await rp({
+                    uri: 'https://api.github.com/user/repos',
+                    headers: {
+                        'Authorization': 'token '+token,
+                        'User-Agent': 'request-promise'
+                    },
+                    json: true
+                });
+                a.repos = repos.map(item => ({name: item.name}));
+            } catch(e) {
+                // probably access was revoken
+            }
         }
 
         res.locals.page = `<index-page :data="${core.toVue(a)}"/>`;
