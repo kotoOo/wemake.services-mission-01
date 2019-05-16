@@ -1,6 +1,30 @@
+body, html {
+    height: 100%;
+}
+
 body {
     background: rgb(30, 37, 47);
     color: #eee;
+    display: flex;
+    flex-direction: column;
+}
+
+#page {
+    flex-grow: 1;
+}
+
+#page-footer {
+    padding: 20px;
+    text-align: center;
+}
+
+a, a:visited{
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 h1 {
@@ -8,7 +32,7 @@ h1 {
     text-align: center;
 }
 
-.start-auth {
+a.start-auth {
     display: block;
     font-weight: 400;
     text-align: center;
