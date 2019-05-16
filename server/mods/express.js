@@ -62,10 +62,9 @@ module.exports = {
         const payload = JSON.stringify(req.body);
         const hmac = crypto.createHmac('sha1', core.config.github.webHookSecret);
         const digest = 'sha1=' + hmac.update(payload).digest('hex');
-        const checksum = req.headers['X-Hub-Signature'];
+        const checksum = req.headers['x-hub-signature'];
         if (!checksum || !digest || checksum !== digest) {
-            console.log(`Request body digest (${digest}) did not match X-Hub-Signature (${checksum})`);
-            console.log(JSON.stringify(req.headers));
+            console.log(`Request body digest (${digest}) did not match x-hub-signature (${checksum})`);
             return;
         }
 
