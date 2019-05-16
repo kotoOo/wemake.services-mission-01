@@ -5,7 +5,7 @@ const template = `
         <div id="github-data">
             <template v-if="data.user">
                 <div class="user-name">Welcome, {{ data.user.name }}!</div>
-                <div class="avatar"><img src="{{ data.user.avatar_url }}" class="av" /></div>
+                <div class="avatar"><img :src="data.user.avatar_url" class="av" /></div>
 
                 <ul>
                     <li v-for="(repo, key) of data.repos" :key="key">{{ repo.name }}</li>
