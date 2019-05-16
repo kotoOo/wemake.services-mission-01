@@ -1,0 +1,80 @@
+body {
+    background: rgb(30, 37, 47);
+    color: #eee;
+}
+
+h1 {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.start-auth {
+    display: block;
+    font-weight: 400;
+    text-align: center;
+    width: 280px;
+    height: 40px;
+
+    margin: 0 auto;
+    
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,
+                        box-shadow .15s ease-in-out, opacity 1s ease;
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,
+                        box-shadow .15s ease-in-out, opacity 1s ease;
+
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+
+    cursor: pointer;
+
+    outline: none !important;
+    text-decoration: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.start-auth:hover {
+    color: #fff;
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.start-auth:active {
+    color: #fff;
+    background-color: #1e7e34;
+    border-color: #1c7430;
+}
+
+pre {
+    color: #ffc000;
+}
+
+#github-data {
+    width: 320px;
+    margin: 0 auto;
+}
+
+#github-data img.av {
+    width: 100%;
+}
+
+ul {
+    margin: 20px 0;
+    list-style: square;
+}
+
+.user-name {
+    margin: 20px 25px;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="utf-8" />
+    	<title><%=title%></title>
+        <meta name="viewport" content="width=device-width, maximum-scale=1" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+        <link rel="stylesheet" href="/css/normalize.css" type="text/css" />
+<%
+    if (typeof styles != 'undefined') styles.forEach((style) => {
+%>
+        <link rel="stylesheet" href="<%-style%>" type="text/css" />
+<%
+    });
+%>
+    </head>
+
+    <body>
+        <div id="page">
+            <%-typeof page != 'undefined' ? page : '' %>
+        </div>
+        <script src="/js/libs/vue.min.js"></script>
+        <script src="/js/index.js"></script>
+    </body>
+</html>
