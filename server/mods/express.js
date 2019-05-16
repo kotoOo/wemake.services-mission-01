@@ -65,6 +65,7 @@ module.exports = {
         const checksum = req.headers['X-Hub-Signature'];
         if (!checksum || !digest || checksum !== digest) {
             console.log(`Request body digest (${digest}) did not match X-Hub-Signature (${checksum})`);
+            console.log(JSON.stringify(req.headers));
             return;
         }
 
