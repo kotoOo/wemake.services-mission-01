@@ -64,7 +64,7 @@ module.exports = {
         const digest = 'sha1=' + hmac.update(payload).digest('hex');
         const checksum = req.headers['X-Hub-Signature'];
         if (!checksum || !digest || checksum !== digest) {
-            console.log(`Request body digest (${digest}) did not match ${headerKey} (${checksum})`);
+            console.log(`Request body digest (${digest}) did not match X-Hub-Signature (${checksum})`);
             return;
         }
 
