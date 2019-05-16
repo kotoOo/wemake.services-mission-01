@@ -1,4 +1,4 @@
 cd /var/wemakeservices
 git pull
 npm install
-restart wemakeservices4110
+pm2 restart wemakeservices
